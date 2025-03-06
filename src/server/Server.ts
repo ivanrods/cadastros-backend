@@ -1,10 +1,10 @@
-import express, { Request, Response } from 'express';
-
+import express, { Request, Response } from "express";
+import 'dotenv/config'
+import {router} from './routes'
 const sever = express();
 
+sever.use(express.json())
 
-sever.get('/', (req: Request, res: Response) => {
-  res.send('Olá, DEV!');
-});
+sever.use(router)
 
-export {sever}
+export { sever };

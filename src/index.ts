@@ -1,5 +1,5 @@
 import { sever } from "./server/Server";
-const PORT = 3333;
-sever.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+
+sever.listen(process.env.PORT || 3333, () => {
+  console.log(`Servidor rodando em http://localhost:${process.env.PORT || 3333}`);
 });
