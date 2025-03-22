@@ -2,10 +2,10 @@ import express from "express";
 import "dotenv/config";
 import "./shared/services/TranslationsYup";
 import { router } from "./routes";
-const sever = express();
+const server = express();
 
-sever.use(express.json());
+server.use(express.json());
 
-sever.use(router);
+server.use(router);
 
-export { sever };
+export { server };
