@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as yup from 'yup';
 
-import { validation } from '../../shared/middleware/index.ts';
+import { validation } from '../../shared/middleware';
 
 
 interface IParamProps {
@@ -20,9 +20,13 @@ export const updateByIdValidation = validation(getSchema => ({
   })),
 }));
 
-export const updateById = async (req: Request<IParamProps, {}, IBodyProps>, res: Response) => {
-  console.log(req.params);
-  console.log(req.body);
-
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Não implementado!');
-};
+export const updateById = async (
+    req: Request<IParamProps, {}, IBodyProps>, 
+    res: Response
+  ): Promise<void> => {
+    console.log(req.params);
+    console.log(req.body);
+  
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Não implementado!');
+  };
+  
