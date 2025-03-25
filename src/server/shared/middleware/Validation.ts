@@ -1,6 +1,7 @@
 import { RequestHandler, Request, Response, NextFunction } from "express";
 import { AnyObject, Maybe, ObjectSchema, ValidationError } from "yup";
-import { StatusCodes } from "http-status-codes";
+const { StatusCodes } = require('http-status-codes');
+
 
 type TProperty = "body" | "header" | "params" | "query";
 

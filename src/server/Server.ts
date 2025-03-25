@@ -1,4 +1,5 @@
-import express from "express";
+const express = require('express');
+
 import "dotenv/config";
 import "./shared/services/TranslationsYup";
 import { router } from "./routes";

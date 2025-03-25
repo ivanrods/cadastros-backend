@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { StatusCodes } from "http-status-codes";
-import * as yup from "yup";
+const { StatusCodes } = require('http-status-codes');
+const yup = require('yup');
 
 import { validation } from "../../shared/middleware";
 

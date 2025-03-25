@@ -1,17 +1,17 @@
 {
     "compilerOptions": {
-        "lib": ["es2017", "esnext", "dom"], // Inclui "dom" caso esteja lidando com APIs de navegador
-        "target": "ES6",
-        "module": "CommonJS",
-        "outDir": "./dist",
-        "rootDir": "./src",
+        "lib": ["es2017", "esnext"],
+        "target": "ES6", 
+        "module": "CommonJS", 
+        "outDir": "./dist", 
+        "rootDir": "./src", 
         "esModuleInterop": true,
         "strict": true,
         "moduleResolution": "Node",
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "typeRoots": ["node_modules/@types"], // Garantir que o TypeScript encontre tipos instalados
-        "types": ["node"] // Explicitamente inclui os tipos do Node.js
+        "typeRoots": ["node_modules/@types"],
+        "types": ["node", "express"]  // Adicionando express aqui
     },
     "include": [
         "src/**/*.ts"
