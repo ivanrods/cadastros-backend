@@ -2,7 +2,12 @@ import { Router } from 'express';
 
 import { CidadesController } from './../controllers';
 
+import express, { Request, Response } from 'express';
+const app = express();
 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Servidor funcionando!');
+});
 
 const router = Router();
 

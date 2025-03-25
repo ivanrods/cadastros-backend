@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "lib": ["es2017", "esnext"],
         "target": "ES6", // Compila o código para ES6
         "module": "CommonJS", // Usa módulos CommonJS, que é o padrão do Node.js
         "outDir": "./dist", // Pasta onde os arquivos compilados serão gerados
