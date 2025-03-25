@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-        "target": "ES6", // Geração de código ECMAScript 6
-        "module": "CommonJS", // Módulos em CommonJS (padrão do Node.js)
-        "outDir": "./dist", // Diretório de saída dos arquivos compilados
-        "rootDir": "./src", // Diretório de origem do código TypeScript
-        "esModuleInterop": true, // Permite importar pacotes CommonJS como se fossem ES6
-        "strict": true, // Habilita verificações estritas do TypeScript
-        "moduleResolution": "Node" // Resolução de módulos no estilo Node.js
+        "target": "ES6",
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "strict": true,
+        "moduleResolution": "Node"
     },
-    "include": ["src/**/*.ts"], // Inclui todos os arquivos TypeScript na pasta src
-    "exclude": ["./jest.config.ts", "./tests", "./dist", "node_modules"] // Exclui a pasta node_modules da compilação
+    "include": ["src/**/*.ts"],
+    "exclude": ["./jest.config.ts", "./tests", "./dist", "node_modules"]
 }

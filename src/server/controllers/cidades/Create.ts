@@ -15,7 +15,9 @@ export const createValidation = validation((getSchema) => ({
     ),
 }));
 
-export const create = async (req: Request<{}, {}, ICidade>, res: Response): Promise<void> => {
-    res.status(StatusCodes.CREATED).json({ message: "Cidade criada com sucesso!", id: 1 });
+export const create = async (
+    req: Request<{}, {}, ICidade>,
+    res: Response
+): Promise<void> => {
+    res.status(StatusCodes.CREATED).json(1);
 };
-

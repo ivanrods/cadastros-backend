@@ -1,32 +1,45 @@
-import { Request, Response } from 'express';
-import { StatusCodes } from 'http-status-codes';
-import * as yup from 'yup';
+import { Request, Response } from "express";
+import { StatusCodes } from "http-status-codes";
+import * as yup from "yup";
 
-import { validation } from '../../shared/middleware';
-
+import { validation } from "../../shared/middleware";
 
 interface IParamProps {
-  id?: number;
+    id?: number;
 }
+
 interface IBodyProps {
-  nome: string;
+    nome: string;
 }
-export const updateByIdValidation = validation(getSchema => ({
-  body: getSchema<IBodyProps>(yup.object().shape({
-    nome: yup.string().required().min(3),
-  })),
-  params: getSchema<IParamProps>(yup.object().shape({
-    id: yup.number().integer().required().moreThan(0),
-  })),
+
+export const updateByIdValidation = validation((getSchema) => ({
+    body: getSchema<IBodyProps>(
+        yup.object().shape({
+            nome: yup.string().required().min(3),
+        })
+    ),
+    params: getSchema<IParamProps>(
+        yup.object().shape({
+            id: yup.number().integer().required().moreThan(0),
+        })
+    ),
 }));
 
 export const updateById = async (
-    req: Request<IParamProps, {}, IBodyProps>, 
+    req: Request<IParamProps, {}, IBodyProps>,
     res: Response
-  ): Promise<void> => {
-    console.log(req.params);
-    console.log(req.body);
-  
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Não implementado!');
-  };
-  
+): Promise<void> => {
+    const { id } = req.params;
+    const { nome } = req.body;
+
+    if (Number(id) === 99999) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            errors: {
+                default: "Erro interno ao tentar atualizar o registro",
+            },
+        });
+        return;
+    }
+
+    res.status(StatusCodes.NO_CONTENT).send();
+};
