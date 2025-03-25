@@ -1,23 +1,25 @@
 {
     "compilerOptions": {
-        "lib": ["es2017", "esnext"],
-        "target": "ES6", // Compila o código para ES6
-        "module": "CommonJS", // Usa módulos CommonJS, que é o padrão do Node.js
-        "outDir": "./dist", // Pasta onde os arquivos compilados serão gerados
-        "rootDir": "./src", // Pasta raiz dos arquivos de código fonte
-        "esModuleInterop": true, // Permite importar módulos CommonJS como se fossem módulos ES6
-        "strict": true, // Habilita todas as verificações de tipo estritas
-        "moduleResolution": "Node", // Resolução de módulos compatível com o Node.js
-        "skipLibCheck": true, // Ignora verificação de tipos de arquivos de definição (aumenta a performance)
-        "forceConsistentCasingInFileNames": true // Força consistência no uso de maiúsculas/minúsculas nos nomes dos arquivos
+        "lib": ["es2017", "esnext", "dom"], // Inclui "dom" caso esteja lidando com APIs de navegador
+        "target": "ES6",
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "strict": true,
+        "moduleResolution": "Node",
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "typeRoots": ["node_modules/@types"], // Garantir que o TypeScript encontre tipos instalados
+        "types": ["node"] // Explicitamente inclui os tipos do Node.js
     },
     "include": [
-        "src/**/*.ts" // Incluir todos os arquivos .ts dentro da pasta src
+        "src/**/*.ts"
     ],
     "exclude": [
-        "node_modules", // Exclui node_modules
-        "dist", // Exclui a pasta dist (gerada pelo compilador)
-        "tests", // Exclui a pasta de testes (caso haja)
-        "jest.config.ts" // Exclui o arquivo de configuração do Jest (caso haja)
+        "node_modules",
+        "dist",
+        "tests",
+        "jest.config.ts"
     ]
 }
