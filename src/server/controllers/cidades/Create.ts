@@ -1,23 +1,20 @@
-import { Request, Response } from "express";
-const { StatusCodes } = require('http-status-codes');
-const yup = require('yup');
+import { Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
+import * as yup from 'yup';
 
-import { validation } from "../../shared/middleware";
+import { validation } from '../../shared/middleware';
+
 
 interface ICidade {
-    nome: string;
+  nome: string;
 }
 export const createValidation = validation((getSchema) => ({
-    body: getSchema<ICidade>(
-        yup.object().shape({
-            nome: yup.string().required().min(3),
-        })
-    ),
+  body: getSchema<ICidade>(yup.object().shape({
+    nome: yup.string().required().min(3),
+  })),
 }));
 
-export const create = async (
-    req: Request<{}, {}, ICidade>,
-    res: Response
-): Promise<void> => {
-    res.status(StatusCodes.CREATED).json(1);
+export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
+
+  return res.status(StatusCodes.CREATED).json(1);
 };

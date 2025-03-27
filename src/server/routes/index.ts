@@ -2,15 +2,15 @@ import { Router } from 'express';
 
 import { CidadesController } from './../controllers';
 
-import express, { Request, Response } from 'express';
-const app = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Servidor funcionando!');
-});
 
 const router = Router();
 
+
+
+router.get('/', (_, res) => {
+  return res.send('Olá, DEV!');
+});
 
 router.get('/cidades', CidadesController.getAllValidation, CidadesController.getAll);
 router.post('/cidades', CidadesController.createValidation, CidadesController.create);
