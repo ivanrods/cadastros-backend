@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
       "lib": ["es2017", "esnext"],
-      "target": "ES6", 
-      "module": "CommonJS", 
-      "outDir": "./dist", 
-      "rootDir": ".", 
+      "target": "ES6",
+      "module": "CommonJS",
+      "outDir": "./dist",
+      "rootDir": ".",
       "esModuleInterop": true,
       "strict": true,
       "moduleResolution": "Node",
