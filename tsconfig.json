@@ -1,25 +1,26 @@
 {
     "compilerOptions": {
-        "lib": ["es2017", "esnext"],
-        "target": "ES6", 
-        "module": "CommonJS", 
-        "outDir": "./dist", 
-        "rootDir": "./src", 
-        "esModuleInterop": true,
-        "strict": true,
-        "moduleResolution": "Node",
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "typeRoots": ["node_modules/@types"],
-        "types": ["node", "express"]  // Adicionando express aqui
+      "lib": ["es2017", "esnext"],
+      "target": "ES6", 
+      "module": "CommonJS", 
+      "outDir": "./dist", 
+      "rootDir": "./src", 
+      "esModuleInterop": true,
+      "strict": true,
+      "moduleResolution": "Node",
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "typeRoots": ["node_modules/@types"],
+      "types": ["node", "express", "jest"]  
     },
     "include": [
-        "src/**/*.ts", "tests/**/*.ts",
+      "src/**/*.ts", 
+      "tests/**/*.ts"
     ],
     "exclude": [
-        "node_modules",
-        "dist",
-        "tests",
-        "jest.config.ts"
+      "node_modules",
+      "dist",
+      "jest.config.ts"
     ]
-}
+  }
+  
