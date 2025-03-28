@@ -14,7 +14,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "build": "/src/index.ts"
+        "dest": "/src/index.ts"
       }
     ]
   }
