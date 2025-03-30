@@ -20,7 +20,8 @@ Cadastros API é uma **API REST** desenvolvida com **Node.js e TypeScript**, res
 - 🧪 **Jest** para testes automatizados  
 
 ## 📂 Como rodar o projeto  
-
+- npm install
+- npm run dev
 ### 1️⃣ Clone o repositório  
 ```bash
 git clone https://github.com/ivanrods/cadastros-backend
