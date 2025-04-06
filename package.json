@@ -11,8 +11,8 @@
         "start": "node build/index.js",
         "test": "jest",
         "knex:migrate": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",
-        "knex:rollbak": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollbak",
-        "knex:rollbak-all": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollbak --all",
+        "knex:rollback": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
+        "knex:rollback-all": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback --all",
         "knex:seed": "knex --knexfile ./src/server/database/knex/Environment.ts seed:run"
     },
     "dependencies": {
