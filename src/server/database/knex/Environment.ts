@@ -22,15 +22,15 @@ export const development: Knex.Config = {
     },
     pool: {
         afterCreate: (connection: any, done: Function) => {
-            connection.run('PRAGMA foreing_keys = ON');
-            done()
-        }
-    }
+            connection.run("PRAGMA foreign_keys = ON");
+            done();
+        },
+    },
 };
 
 export const test: Knex.Config = {
     ...development,
-    connection: ':memory'
+    connection: ":memory:",
 };
 
 export const production: Knex.Config = {
