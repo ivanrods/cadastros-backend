@@ -1,5 +1,5 @@
 import { error } from "console";
-import { ICidade } from "../../modules";
+import { ICidade } from "../../models";
 import { Knex } from "../../knex";
 import { ETableNames } from "../../../controllers/ETableNames";
 
