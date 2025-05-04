@@ -1,24 +1,41 @@
-import { StatusCodes } from 'http-status-codes';
+import { StatusCodes } from "http-status-codes";
 
-import { testServer } from '../jest.setup';
+import { testServer } from "../jest.setup";
 
+describe("Cidades - GetAll", () => {
+    let accessToken = "";
+    beforeAll(async () => {
+        const email = "getall-cidades@gmail.com";
+        await testServer
+            .post("/cadastrar")
+            .send({ email, senha: "123456", nome: "Teste" });
+        const signInRes = await testServer
+            .post("/entrar")
+            .send({ email, senha: "123456" });
 
-describe('Cidades - GetAll', () => {
+        accessToken = signInRes.body.accessToken;
+    });
 
-  it('Buscar todos os registros', async () => {
+    it("Tenta consultar sem usar token de autenticação", async () => {
+        const res1 = await testServer.get("/cidades").send();
+        expect(res1.statusCode).toEqual(StatusCodes.UNAUTHORIZED);
+        expect(res1.body).toHaveProperty("errors.default");
+    });
+    it("Buscar todos os registros", async () => {
+        const res1 = await testServer
+            .post("/cidades")
+            .set({ Authorization: `Bearer ${accessToken}` })
+            .send({ nome: "Caxias do sul" });
 
-    const res1 = await testServer
-      .post('/cidades')
-      .send({ nome: 'Caxias do sul' });
+        expect(res1.statusCode).toEqual(StatusCodes.CREATED);
 
-    expect(res1.statusCode).toEqual(StatusCodes.CREATED);
+        const resBuscada = await testServer
+            .get("/cidades")
+            .set({ Authorization: `Bearer ${accessToken}` })
+            .send();
 
-    const resBuscada = await testServer
-      .get('/cidades')
-      .send();
-
-    expect(Number(resBuscada.header['x-total-count'])).toBeGreaterThan(0);
-    expect(resBuscada.statusCode).toEqual(StatusCodes.OK);
-    expect(resBuscada.body.length).toBeGreaterThan(0);
-  });
+        expect(Number(resBuscada.header["x-total-count"])).toBeGreaterThan(0);
+        expect(resBuscada.statusCode).toEqual(StatusCodes.OK);
+        expect(resBuscada.body.length).toBeGreaterThan(0);
+    });
 });
