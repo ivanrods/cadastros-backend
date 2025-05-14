@@ -7,17 +7,21 @@ import { router } from "./routes";
 
 const server = express();
 
-const allowedOrigins = process.env.ENABLED_CORS?.split(';') || [];
-
-server.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true); 
-    } else {
-      callback(new Error('Not allowed by CORS'));
+const allowedOrigins = [
+    'https://cadastros-frontend.vercel.app',
+    'http://localhost:5173' 
+  ];
+  
+  server.use(cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true); 
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
     }
-  }
-}));
+  }));
+  
 
 
 server.use(express.json());
