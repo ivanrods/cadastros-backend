@@ -1,9 +1,9 @@
-import { ICidades, IPessoa, IUsuario } from "../../models";
+import { ICidade, IPessoa, IUsuario } from "../../models";
 
-declare module "knex/types/table" {
+declare module "knex/types/tables" {
     interface Tables {
-        cidade: ICidades;
         pessoa: IPessoa;
+        cidade: ICidade;
         usuario: IUsuario;
     }
 }

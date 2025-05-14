@@ -15,7 +15,7 @@ export const updateById = async (
             return new Error("A cidade usada no cadastro não foi encontrada");
         }
 
-        const result = await Knex(ETableNames.usuario)
+        const result = await Knex(ETableNames.pessoa)
             .update(pessoa)
             .where("id", "=", id);
 

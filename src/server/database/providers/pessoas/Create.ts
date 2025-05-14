@@ -14,7 +14,7 @@ export const create = async (
             return new Error("A cidade usada no cadastro não foi encontrada");
         }
 
-        const [result] = await Knex(ETableNames.usuario)
+        const [result] = await Knex(ETableNames.pessoa)
             .insert(pessoa)
             .returning("id");
         if (typeof result === "object") {

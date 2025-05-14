@@ -4,7 +4,7 @@ import { Knex } from "../../knex";
 
 export const getById = async (id: number): Promise<IPessoa | Error> => {
     try {
-        const result = await Knex(ETableNames.usuario)
+        const result = await Knex(ETableNames.pessoa)
             .select("*")
             .where("id", "=", id)
             .first();

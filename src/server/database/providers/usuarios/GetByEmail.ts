@@ -16,4 +16,4 @@ export const getByEmail = async (email: string): Promise<IUsuario | Error> => {
         console.log(error);
         return new Error("Erro ao consultar o registro");
     }
-}; 
+};

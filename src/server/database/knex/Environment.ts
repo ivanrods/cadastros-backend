@@ -1,12 +1,5 @@
 import { Knex } from "knex";
 import path from "path";
-import pg from "pg";
-
-import 'dotenv/config'
-
-if (process.env.NODE_ENV === "production") {
-    pg.types.setTypeParser(20, "text", parseInt);
-}
 
 export const development: Knex.Config = {
     client: "sqlite3",
@@ -42,14 +35,12 @@ export const test: Knex.Config = {
 
 export const production: Knex.Config = {
     client: "pg",
-
     migrations: {
         directory: path.resolve(__dirname, "..", "migrations"),
     },
     seeds: {
         directory: path.resolve(__dirname, "..", "seeds"),
     },
-
     connection: {
         host: process.env.DATABASE_HOST,
         user: process.env.DATABASE_USER,
