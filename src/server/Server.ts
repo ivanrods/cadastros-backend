@@ -7,7 +7,18 @@ import { router } from "./routes";
 
 const server = express();
 
-server.use(cors({ origin: process.env.ENABLED_CORS?.split(";") || [] }));
+const allowedOrigins = process.env.ENABLED_CORS?.split(';') || [];
+
+server.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); 
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 
 server.use(express.json());
 
