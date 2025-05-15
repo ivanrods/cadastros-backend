@@ -8,6 +8,7 @@ export async function up(knex: Knex) {
             table.bigIncrements("id").primary().index();
             table.string("nomeCompleto").index().notNullable();
             table.string("email").unique().notNullable();
+
             table
                 .bigInteger("cidadeId")
                 .index()
