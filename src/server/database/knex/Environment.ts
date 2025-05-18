@@ -42,15 +42,18 @@ export const production: Knex.Config = {
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
         ssl: {
-            rejectUnauthorized: false, 
-            require: true,
+            rejectUnauthorized: false,
         },
     },
-
     migrations: {
         directory: path.resolve(__dirname, "..", "migrations"),
     },
     seeds: {
         directory: path.resolve(__dirname, "..", "seeds"),
+    },
+    pool: {
+        min: 2,
+        max: 10,
+        idleTimeoutMillis: 30000,
     },
 };
