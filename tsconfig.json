@@ -4,22 +4,14 @@
         "module": "commonjs",
         "rootDir": "./src",
         "outDir": "./build",
-
         "esModuleInterop": true,
-
         "forceConsistentCasingInFileNames": true,
-
         "strict": true,
-
         "skipLibCheck": true,
-        "types": ["node"],
-
+        "types": [],
         "typeRoots": ["./node_modules/@types"],
-
         "moduleResolution": "node",
-
         "lib": ["es2017"],
-
         "noEmitOnError": false
     },
     "exclude": ["./jest.config.ts", "./node_modules", "./tests", "./build"]
