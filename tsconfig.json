@@ -1,18 +1,15 @@
 {
     "compilerOptions": {
-        "target": "es2016",
+        "outDir": "dist",
+        "target": "es6",
         "module": "commonjs",
-        "rootDir": "./src",
-        "outDir": "./build",
+        "rootDir": "src",
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
         "strict": true,
+        "resolveJsonModule": true,
         "skipLibCheck": true,
-        "types": [],
-        "typeRoots": ["./node_modules/@types"],
         "moduleResolution": "node",
-        "lib": ["es2017"],
-        "noEmitOnError": false
+        "types": ["node"]
     },
-    "exclude": ["./jest.config.ts", "./node_modules", "./tests", "./build"]
+    "exclude": ["node_modules", "dist", "jest.config.ts", "tests"]
 }
