@@ -18,7 +18,6 @@
         "knex:seed": "knex --knexfile ./src/server/database/knex/Environment.ts seed:run"
     },
     "dependencies": {
-        "@types/node": "^20.19.11",
         "bcryptjs": "^2.4.3",
         "cors": "^2.8.5",
         "dotenv": "^16.6.1",
@@ -36,6 +35,7 @@
         "@types/http-status-codes": "^1.2.0",
         "@types/jest": "^28.1.8",
         "@types/jsonwebtoken": "^8.5.9",
+        "@types/node": "^20.19.11",
         "@types/pg": "^8.15.5",
         "@types/supertest": "^2.0.16",
         "@typescript-eslint/eslint-plugin": "^5.62.0",

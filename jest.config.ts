@@ -5,7 +5,7 @@ const config: Config = {
     collectCoverage: true,
     coverageDirectory: "coverage",
     coverageProvider: "v8",
-    coverageReporters: ["json"],
+    coverageReporters: ["json", "lcov", "text", "clover"],
     setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.ts"],
     testMatch: ["<rootDir>/tests/**/*.test.ts"],
     transform: {
