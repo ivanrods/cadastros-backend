@@ -1,9 +1,22 @@
 {
-    "extends": "./tsconfig.json",
     "compilerOptions": {
         "outDir": "dist",
+        "target": "es6",
+        "module": "commonjs",
         "rootDir": "src",
+        "esModuleInterop": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
         "types": ["node"]
     },
-    "exclude": ["node_modules", "tests"]
+    "include": ["src/**/*"],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.test.ts",
+        "**/tests/**",
+        "jest.config.ts"
+    ]
 }
